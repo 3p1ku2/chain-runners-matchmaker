@@ -1,0 +1,1 @@
+export { ethersProvider } from "./ethersProvider";

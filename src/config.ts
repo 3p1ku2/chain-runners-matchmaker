@@ -1,0 +1,5 @@
+export const MULTICALL_CONTRACT_ADDRESS: string =
+  "0xeefBa1e63905eF1D7ACbA5a8513c70307C1cE441";
+
+export const CHAIN_RUNNERS_XR_CONTRACT_ADDRESS: string =
+  "0x4e1824ca2e3dcef21d8eabcf11ccd2b5fd46774b";
