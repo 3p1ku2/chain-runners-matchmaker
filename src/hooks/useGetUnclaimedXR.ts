@@ -1,9 +1,9 @@
+import { useMemo } from "react";
 import { useQuery } from "react-query";
 
 import { CHAIN_RUNNERS_XR_CONTRACT_ADDRESS } from "../config";
 import { ChainRunnersXR__factory } from "../../abi-types";
 import { multicall, UNCLAIMED_XR_TOKEN_IDS_CACHED } from "../helpers";
-import { useMemo } from "react";
 
 type GetUnclaimedXRResult = {
   /**
