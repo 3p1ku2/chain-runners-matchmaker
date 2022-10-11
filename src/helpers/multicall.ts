@@ -28,7 +28,7 @@ export async function multicall<T>(calls: MulticallTuple[]): Promise<T[]> {
       }))
     );
 
-    return result.map(
+    return result.flatMap(
       (r, i) =>
         calls[i][1].decodeFunctionResult(calls[i][1].fragments[0].name, r) as T
     );
