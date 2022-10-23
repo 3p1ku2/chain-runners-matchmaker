@@ -36,6 +36,7 @@ async function getSudoPair(
           bondingCurve
           delta
           fee
+          id
           nftIds
           spotPrice
         }
