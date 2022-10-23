@@ -13,6 +13,10 @@ type SudoPairResponse = {
    */
   fee: string;
   /**
+   * ID (bytes32) of pair
+   */
+  id: string;
+  /**
    * List of token IDs
    */
   nftIds: string[];
