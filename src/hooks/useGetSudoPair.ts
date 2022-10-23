@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useQuery } from "react-query";
 
 import { SUDOSWAP_SUBGRAPH_URL } from "../config";
@@ -71,11 +72,29 @@ async function getSudoPair(
 }
 
 export function useGetSudoPair(collectionAddress: string): GetSudoPairResult {
-  const { data: sudoPair, status: sudoPairStatus } = useQuery(
+  /**
+   * Their hooks
+   */
+
+  const { data, status: sudoPairStatus } = useQuery(
     ["getSudoPair", collectionAddress],
     () => getSudoPair(collectionAddress),
     { retry: false }
   );
+
+  /**
+   * Memoized
+   */
+
+  const sudoPair = useMemo<SudoPairResponse[] | undefined>(
+    // Take pairs where NFTs are present
+    () => data?.filter((d) => d.nftIds.length > 0),
+    [data]
+  );
+
+  /**
+   * Result
+   */
 
   return {
     sudoPair,
